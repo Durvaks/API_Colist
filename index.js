@@ -1,4 +1,5 @@
 const express = require("express");
+const Users = require('./Routes/User')
 require('./Config/Database');
 
 const App = express();
@@ -8,9 +9,4 @@ App.listen(3333,()=>{
 });
 
 App.use(express.json());
-
-App.get("/",(require, response)=>{
-    response.send({
-        Test: 'testando'
-    })
-})
+App.use('/user', Users)
