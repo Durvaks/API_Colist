@@ -13,7 +13,8 @@ const UserSchema = mongoose.Schema({
               return /\S+@\S+\.\S+/.test(value);
             },
             message: props => `${props.value} não é um endereço de e-mail válido!`
-          }
+          },
+        unique: true
      }
 })
 
