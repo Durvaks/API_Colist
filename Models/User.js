@@ -15,7 +15,8 @@ const UserSchema = mongoose.Schema({
             message: props => `${props.value} não é um endereço de e-mail válido!`
           },
         unique: true
-     }
+     },
+     acessCode:{type: String}
 })
 
 module.exports = mongoose.model('User', UserSchema);
